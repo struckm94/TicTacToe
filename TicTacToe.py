@@ -13,13 +13,96 @@ player1 = "Player1"
 player2 = "Player2"
 turnCount = 0
 
+def winner_Calc():
+    
+    #Player 1 checks
+    
+    #Horizontal Checks
+    if 'x' == (row1[0] and row1[1] and row1[2]):
+        print(f"{player1} wins!")
+        winner = True
+        return(winner)
+    elif 'x' == (row2[0] and row2[1] and row2[2]):
+        print(f"{player1} wins!")
+        winner = True
+        return(winner)        
+    elif 'x' == (row3[0] and row3[1] and row3[2]):
+        print(f"{player1} wins!")
+        winner = True
+        return(winner)
+    #Diagonal Checks
+    elif 'x' == (row1[0] and row2[1] and row3[2]):
+        print(f"{player1} wins!")
+        winner = True
+        return(winner)
+    elif 'x' == (row1[2] and row2[1] and row3[0]):
+        print(f"{player1} wins!")
+        winner = True
+        return(winner)
 
-while winner != True:
+    #Vertical checks
+    elif 'x' == (row1[0] and row2[0] and row3[0]):
+        print(f"{player1} wins!")
+        winner = True
+        return(winner)        
+    elif 'x' == (row1[1] and row2[1] and row3[1]):
+        print(f"{player1} wins!")
+        winner = True
+        return(winner)
+    elif 'x' == (row1[2] and row2[2] and row3[2]):
+        print(f"{player1} wins!")
+        winner = True
+        return(winner)    
+
+    
+    #Player 2 checks
+    
+    #Horizontal Checks
+    if 'o' == (row1[0] and row1[1] and row1[2]):
+        print(f"{player2} wins!")
+        winner = True
+        return(winner)
+    elif 'o' == (row2[0] and row2[1] and row2[2]):
+        print(f"{player2} wins!")
+        winner = True
+        return(winner)        
+    elif 'o' == (row3[0] and row3[1] and row3[2]):
+        print(f"{player2} wins!")
+        winner = True
+        return(winner)
+    #Diagonal Checks
+    elif 'o' == (row1[0] and row2[1] and row3[2]):
+        print(f"{player2} wins!")
+        winner = True
+        return(winner)
+    elif 'o' == (row1[2] and row2[1] and row3[0]):
+        print(f"{player2} wins!")
+        winner = True
+        return(winner)
+
+    #Vertical checks
+    elif 'o' == (row1[0] and row2[0] and row3[0]):
+        print(f"{player2} wins!")
+        winner = True
+        return(winner)        
+    elif 'o' == (row1[1] and row2[1] and row3[1]):
+        print(f"{player2} wins!")
+        winner = True
+        return(winner)
+    elif 'o' == (row1[2] and row2[2] and row3[2]):
+        print(f"{player2} wins!")
+        winner = True
+        return(winner)  
+
+    
+
+
+while True:
 
     #Set pieces to false
     xPiece = False
     oPiece = False
-
+    
     #row1
     print(row1[0] + " | " + row1[1] + " | " + row1[2])
 
@@ -32,17 +115,19 @@ while winner != True:
     print(row3[0] + " | " + row3[1] + " | " + row3[2] + "\n")
 
 
+    #Calculate Winner!
+    if winner_Calc() == True:
+        break
+
     #Determine player's turn
     if turnCount % 2 == 0:
         print(f"{player1}'s turn \n")
         xPiece = True
-        #winner = True
         turnCount = turnCount + 1
         
     else:
         print(f"{player2}'s turn \n")
         oPiece = True
-        #winner = True
         turnCount = turnCount + 1
     #end if
 
