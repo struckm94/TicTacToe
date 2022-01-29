@@ -140,6 +140,7 @@ while play == True:
         elif turnCount == 9 and winner != True:
             print("Cat wins!")
             break
+        #end if
 
         #Determine player's turn
         if turnCount % 2 == 0:
@@ -161,7 +162,7 @@ while play == True:
             oPiece = True
             selection = input(f"Make your move {player2}: ")
             piecePlacement = "o"
-        
+        #end if
         
         
         #mark the board with piece    
@@ -218,8 +219,6 @@ while play == True:
                 playAgainValid = False
                 print("Invalid answer\n")
                 continue
-                
-
         #end if
 
 print("Thanks for playing!")
