@@ -1,0 +1,23 @@
+#Create new branch
+git checkout -b <branch name>
+
+#Add file to commit
+git add <file name>
+
+#Add all files to commit
+git add .
+
+#Create commit
+git commit -m "<commit message>"
+
+#Push code to github
+git push -u origin <branch name>
+
+#Switch branch
+git checkout <branch name>
+
+#Get latest code
+git pull
+
+#Check git status
+git status
